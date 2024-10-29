@@ -38,6 +38,7 @@ class Board {
     }
   }
 
+  checker_all_boxes() {}
   Event_Listener() {
     // @ts-ignore
     Array.from(this.container.children).forEach((child) => {
@@ -151,6 +152,7 @@ class Board {
   point = (event) => {
     const box = event.currentTarget.id;
     const current_box = document.getElementById(box);
+
     // @ts-ignore
     if (current_box.children.length > 0) {
       // @ts-ignore
@@ -159,6 +161,17 @@ class Board {
       this.score_made.innerHTML = `Score : ${this.score}`;
       // @ts-ignore
       current_box.innerHTML = "";
+      // @ts-ignore
+      const all_cases_empty = Array.from(this.container.children).every(
+        (child) => {
+          // @ts-ignore
+          return document.getElementById(child.id).children.length === 0;
+        }
+      );
+      if (all_cases_empty && this.timers > 0) {
+        clearInterval(this.interval);
+        this.appear_disappear();
+      }
     } else {
       this.score -= 1;
       // @ts-ignore
