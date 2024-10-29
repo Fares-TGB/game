@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="./index.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body class="flex justify-center items-center h-full">
+    <div>
+      <div class="items-center">
+        <h1>Jeu Tape Souris</h1>
+        <h2>
+          consigne <br />
+          vous avez 30 s pour faire le plus de point possible <br />
+          Chaque niveau de difficulté corresponds à 1 , 2 , 3 souris <br />
+          le temps de visibilité permets de choisir le temps que la souris
+          resteras à l'écran <br />
+          par defaut elle est de 2s <br />
+          apres avoir disparu la souris ne réapparait que chaque 2s <br />
+          durant une partie vous pouvez modifiez le temps de visibilité <br />
+          Pour relancer une partie cliquer sur un niveau de difficulté
+        </h2>
+        <div>
+          <span> Temps de visibilite(seconde) </span>
+          <input
+            id="visibility"
+            value="2"
+            type="number"
+            class="input"
+            min="1"
+            max="10"
+          />
+        </div>
+
+        <div id="level">
+          <button id="easy" class="button">easy</button>
+          <button id="medium" class="button">medium</button>
+          <button id="difficult" class="button">difficult</button>
+        </div>
+      </div>
+
+      <div id="infos">
+        <span id="score"> Score : 0 </span>
+        <span id="time"> Time : 30 </span>
+      </div>
+
+      <div
+        id="container"
+        class="h-[500px] w-[500px] border-2 border-black border-solid grid grid-cols-3 grid-rows-3 gap-2 p-2"
+      >
+        <div id="case1" class="case"></div>
+        <div id="case2" class="case"></div>
+        <div id="case3" class="case"></div>
+        <div id="case4" class="case"></div>
+        <div id="case5" class="case"></div>
+        <div id="case6" class="case"></div>
+        <div id="case7" class="case"></div>
+        <div id="case8" class="case"></div>
+        <div id="case9" class="case"></div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
