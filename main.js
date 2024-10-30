@@ -74,6 +74,9 @@ class Board {
         // @ts-ignore
         this.time.innerHTML = `<br>Votre Temps est ecoule 
         <br>si vous voulez rejouer, cliquez sur un des Niveau de difficulé`;
+        Array.from(this.container.children).forEach((child) => {
+          child.removeEventListener("click", this.point);
+        });
 
         this.nettoyer_case();
       }
